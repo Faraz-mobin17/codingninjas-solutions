@@ -4,31 +4,38 @@ using namespace std;
 void spiralPrint(int **input, int nRows, int nCols)
 {
     //Write your code here
-    int startingRow = 0;
-    int startingCol = 0;
-    int endingRow = nRows - 1;
-    int endingCols = nCols - 1;
+    int startingRow = 0, startingCol = 0, count = 0;
+    int endingRow = nRows - 1, endingCol = nCols - 1;
     int total = nRows * nCols;
-    for (int index = 0; index < total; ++index) {
+    
+      while (count < total) {
+            for (int index = startingCol; count < total && index <= endingCol; ++index) {
+                cout << input[startingRow][index] << " ";
+                ++count;
+            }
+            startingRow++;
+            // print ending col
+            for (int index = startingRow; count < total && index <= endingRow; ++index) {
+                cout << input[index][endingCol] << " ";
+                ++count;
+            }
+            --endingCol;
+            // print ending row
+            for (int index = endingCol; count < total && index >= startingCol; --index) {
+                cout << input[endingRow][index] << " ";
+                ++count;
+            }
+            --endingRow;
+            // print starting Col 
+            for (int index = endingRow; count < total && index >= startingRow; --index) {
+                cout << input[index][startingCol] << " ";
+                ++count;
+            }
+            ++startingCol;
+        }
+     
+ }    
 
-        for (int index = startingCol; index <= endingCols; ++index) {
-            cout << input[startingRow][index] << " ";
-        }
-        ++startingRow;
-        for (int index = startingRow; index <= endingRow; ++index) {
-            cout << input[index][endingRow] << " ";
-        }
-        --endingCols;
-        for (int index = endingCols; index >= startingCol; --index) {
-            cout << input[endingRow][index] << " ";
-        }
-        --endingRow;
-        for (int index = endingRow; index >= startingRow; --index) {
-            cout << input[index][startingCol] << " ";
-        }
-        --startingCol;
-    }    
-}
 
 int main()
 {
@@ -39,23 +46,23 @@ int main()
 
         int row, col;
         cin >> row >> col;
-        int **matrix = new int *[row];
+        int **input = new int *[row];
 
         for (int i = 0; i < row; i++)
         {
-            matrix[i] = new int[col];
+            input[i] = new int[col];
             for (int j = 0; j < col; j++)
             {
-                cin >> matrix[i][j];
+                cin >> input[i][j];
             }
         }
-        spiralPrint(matrix, row, col);
+        spiralPrint(input, row, col);
 
         for (int i = 0; i < row; ++i)
         {
-            delete[] matrix[i];
+            delete[] input[i];
         }
-        delete[] matrix;
+        delete[] input;
 
         cout << endl;
     }
