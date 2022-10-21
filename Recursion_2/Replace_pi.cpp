@@ -3,11 +3,6 @@
 using namespace std;
 void replacePi(char input[])
 {
-    // Write your code here
-    // base case
-
-    // small calc
-    // recursive call
     if (input[0] == '\0')
         return;
     if (input[0] == 'p' && input[1] == 'i')
@@ -32,4 +27,5 @@ int main()
     cin.getline(input, 10000);
     replacePi(input);
     cout << input << endl;
+    return 0;
 }
