@@ -10,7 +10,6 @@ void towerOfHanoi(int n, char source, char auxiliary, char destination)
     cout << source << " " << destination << endl;
     towerOfHanoi(n - 1, auxiliary, source, destination);
 }
-
 int main()
 {
     int n;
