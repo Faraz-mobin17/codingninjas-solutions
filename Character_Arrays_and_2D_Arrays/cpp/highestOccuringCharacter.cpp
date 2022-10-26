@@ -1,34 +1,34 @@
 #include <iostream>
 #include <cstring>
+#define ASCII_SIZE 256
 using namespace std;
-char getMaxOccCharacter(char s[])
+char getMaxOccCharacter(char input[])
 {
-    int arr[26] = {0};
-    for (int i = 0; i <= strlen(s); i++)
+
+    // Write your code here
+    int count[ASCII_SIZE] = {0};
+
+    int len = strlen(input);
+
+    for (int i = 0; i < len; i++)
     {
-        char ch = s[i];
-        int number = 0;
-        if (ch >= 'a' && ch <= 'z')
-        {
-            number = ch - 'a';
-        }
-        else
-        {
-            number = ch - 'A';
-        }
-        arr[number]++;
+        char ch = input[i];
+        count[ch]++;
     }
-    int max = -1, ans = 0;
-    for (int i = 0; i < 26; i++)
+    int max = -1;
+    char result;
+
+    for (int i = 0; i < len; i++)
     {
-        if (max < arr[i])
+        char ch = input[i];
+        if (max < count[ch])
         {
-            ans = i;
-            max = arr[i];
+            max = count[ch];
+            result = input[i];
         }
     }
-    char finalAns = 'a' + ans;
-    return finalAns;
+
+    return result;
 }
 int main()
 {
