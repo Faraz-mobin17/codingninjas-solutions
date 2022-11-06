@@ -1,16 +1,7 @@
 #include <iostream>
+#include "Node.cpp"
 using namespace std;
-class Node
-{
-public:
-    int data;
-    Node *next;
-    Node(int data)
-    {
-        this->data = data;
-        this->next = NULL;
-    }
-};
+
 int length(Node *head)
 {
     // Write your code here
@@ -56,5 +47,6 @@ int main()
         Node *head = takeinput();
         cout << length(head) << endl;
     }
+
     return 0;
 }
