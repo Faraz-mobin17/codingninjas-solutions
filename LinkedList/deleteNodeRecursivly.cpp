@@ -1,22 +1,21 @@
 #include <iostream>
 #include "Node.cpp"
 using namespace std;
-Node *insertNode(Node *head, int i, int data)
+Node *deleteNodeRec(Node *head, int pos)
 {
     // Write your code here
-    // base case
     if (head == NULL)
     {
         return head;
     }
-    // recursion call
-    head->next = insertNode(head->next, i - 1, data);
+    // call recursion
+    head->next = deleteNodeRec(head->next, pos - 1);
     // small work
-    if (i == 0)
+    if (pos == 0)
     {
-        Node *newNode = new Node(data);
-        newNode->next = head;
-        head = newNode;
+        Node *temp = head;
+        head = head->next;
+        delete temp;
         return head;
     }
 }
@@ -46,14 +45,12 @@ Node *takeinput()
 void print(Node *head)
 {
     Node *temp = head;
-
     while (temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
     }
-
-    cout << "\n";
+    cout << endl;
 }
 
 int main()
@@ -64,9 +61,11 @@ int main()
     while (t--)
     {
         Node *head = takeinput();
-        int pos, data;
-        cin >> pos >> data;
-        head = insertNode(head, pos, data);
+        int pos;
+        cin >> pos;
+        head = deleteNodeRec(head, pos);
         print(head);
     }
+
+    return 0;
 }
