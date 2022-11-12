@@ -58,10 +58,11 @@ Node *insertNode(Node *head, int i, int data)
 
 void print(Node *head)
 {
-    while (head != NULL)
+    Node *temp = head;
+    while (temp != NULL)
     {
-        cout << head->data << " ";
-        head = head->next;
+        cout << temp->data << " ";
+        temp = temp->next;
     }
 }
 
