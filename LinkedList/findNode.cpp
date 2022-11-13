@@ -12,11 +12,7 @@ int findNode(Node *head, int n)
         temp = temp->next;
         ++idx;
     }
-    if (temp == NULL)
-    {
-        return -1;
-    }
-    return idx;
+    return temp == NULL ? -1 : idx;
 }
 
 Node *takeinput()
