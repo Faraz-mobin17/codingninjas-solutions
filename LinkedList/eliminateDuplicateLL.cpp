@@ -5,6 +5,27 @@ using namespace std;
 Node *removeDuplicates(Node *head)
 {
     // Write your code here
+    // if ll is empty
+    if (head == null)
+    {
+        return head;
+    }
+    Node *current = head;
+    while (current->next != null)
+    {
+        if (current->data == current->next->data)
+        {
+            Node *next_next = current->next->next;
+            Node *nodeToDelete = current->next;
+            delete (nodeToDelete);
+            current->next = next_next;
+        }
+        else
+        {
+            current = current->next;
+        }
+    }
+    return head;
 }
 Node *takeinput()
 {
