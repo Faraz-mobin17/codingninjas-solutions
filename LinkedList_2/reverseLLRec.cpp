@@ -1,6 +1,30 @@
 #include <iostream>
 #include "Node.cpp"
+#include "Pair.cpp"
 using namespace std;
+
+Pair reverseLinkedListRec_better(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        Pair ans;
+        ans.head = head;
+        ans.tail = head;
+        return ans;
+    }
+    Pair smallAns = reverseLinkedListRec_better(head->next);
+    smallAns.tail->next = head;
+    head->next = NULL;
+    Pair ans;
+    ans.head = smallAns.head;
+    ans.tail = head;
+    return ans;
+}
+
+Node *reverseLL_better(Node *head)
+{
+    return reverseLinkedListRec_better(head).head;
+}
 
 Node *reverseLinkedListRec(Node *head)
 {
@@ -58,7 +82,8 @@ int main()
     while (t--)
     {
         Node *head = takeinput();
-        head = reverseLinkedListRec(head);
+        // head = reverseLinkedListRec(head);
+        head = reverseLL_better(head);
         print(head);
     }
 
