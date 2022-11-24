@@ -2,7 +2,16 @@
 #include "Node.cpp"
 #include "Pair.cpp"
 using namespace std;
-
+Node *reverseLinkedListRec_best(Node *head)
+{
+    if (head == NULL || head->next == NULL)
+        return head;
+    Node *smallAns = reverseLinkedListRec_best(head->next);
+    Node *tail = head->next;
+    tail->next = head;
+    head->next = NULL;
+    return smallAns;
+}
 Pair reverseLinkedListRec_better(Node *head)
 {
     if (head == NULL || head->next == NULL)
@@ -83,7 +92,8 @@ int main()
     {
         Node *head = takeinput();
         // head = reverseLinkedListRec(head);
-        head = reverseLL_better(head);
+        // head = reverseLL_better(head);
+        head = reverseLinkedListRec_best(head);
         print(head);
     }
 
