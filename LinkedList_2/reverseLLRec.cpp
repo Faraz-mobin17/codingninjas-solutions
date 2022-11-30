@@ -2,6 +2,7 @@
 #include "Node.cpp"
 #include "Pair.cpp"
 using namespace std;
+// TC O(n)
 Node *reverseLinkedListRec_best(Node *head)
 {
     if (head == NULL || head->next == NULL)
@@ -12,6 +13,7 @@ Node *reverseLinkedListRec_best(Node *head)
     head->next = NULL;
     return smallAns;
 }
+// this solution is used to show how we can return multiple params from function. TC =  O(n)
 Pair reverseLinkedListRec_better(Node *head)
 {
     if (head == NULL || head->next == NULL)
@@ -34,7 +36,7 @@ Node *reverseLL_better(Node *head)
 {
     return reverseLinkedListRec_better(head).head;
 }
-
+// TC = O(n^2)
 Node *reverseLinkedListRec(Node *head)
 {
     // Write your code here
