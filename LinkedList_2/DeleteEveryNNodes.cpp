@@ -4,10 +4,12 @@ using namespace std;
 
 Node *skipMdeleteN(Node *head, int M, int N)
 {
-    // Write your code here
     Node *current = head, *t;
     int count;
-
+    if (head == NULL || M == 0)
+        return NULL;
+    if (N == 0)
+        return head;
     // The main loop that traverses
     // through the whole list
     while (current)
