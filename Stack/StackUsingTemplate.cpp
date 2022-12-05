@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 template <typename T>
 class StackUsingTemplate
 {
@@ -51,7 +53,7 @@ public:
         if (isEmpty())
         {
             cout << "Stack is empty\n";
-            return -1;
+            return 0;
         }
         nextIndex--;
         return data[nextIndex];
@@ -61,7 +63,7 @@ public:
         if (isEmpty())
         {
             cout << "Stack is Empty\n";
-            return -1;
+            return 0;
         }
         return data[nextIndex - 1];
     }
