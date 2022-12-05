@@ -4,47 +4,44 @@ using namespace std;
 void merge(int *input, int startIndex, int endIndex)
 {
 	// merge array
-	int mid = (startIndex + endIndex) / 2;
-	int len1 = mid - startIndex + 1;
-	int len2 = endIndex - mid;
+	int size = endIndex - startIndex + 1;  // no of el in arr
+	int mid = (startIndex + endIndex) / 2; // mid of arr
+	int *output = new int[size];		   // creating dynamic arr of no of el in arr
 
-	int *first = new int[len1];
-	int *second = new int[len2];
+	int i = startIndex;
+	int j = mid + 1;
+	int k = 0; // output arr index
 
-	// copy values
-	int mainArrayIndex = startIndex;
-
-	for (int i = 0; i < len1; i++)
+	while (i <= mid && j <= endIndex)
 	{
-		first[i] = input[mainArrayIndex++];
-	}
-	mainArrayIndex = mid + 1;
-	for (int i = 0; i < len2; i++)
-	{
-		second[i] = input[mainArrayIndex++];
-	}
-	int index1 = 0;
-	int index2 = 0;
-	mainArrayIndex = startIndex;
-	while (index1 < len1 && index2 < len2)
-	{
-		if (first[index1] < second[index2])
+		if (input[i] < input[j])
 		{
-			input[mainArrayIndex++] = first[index1++];
+			output[k++] = input[i++];
 		}
 		else
 		{
-			input[mainArrayIndex++] = second[index2++];
+			output[k++] = input[j++];
 		}
 	}
-	while (index1 < len1)
+	// if el left in i
+	while (i <= mid)
 	{
-		input[mainArrayIndex++] = first[index1++];
+		output[k++] = input[i++];
 	}
-	while (index2 < len2)
+	// if el left in j
+	while (j <= endIndex)
 	{
-		input[mainArrayIndex++] = second[index2++];
+		output[k++] = input[j++];
 	}
+	// copy to original arr
+	int m = 0;
+	for (int i = startIndex; i <= endIndex; i++)
+	{
+		input[i] = output[m];
+		m++;
+	}
+	// freeing the dynamic memory created
+	delete[] output;
 }
 
 void mergeSortRec(int input[], int startIndex, int endIndex)
@@ -66,6 +63,7 @@ void mergeSort(int input[], int size)
 {
 	int startIndex = 0;
 	int endIndex = size - 1;
+	// helper function
 	mergeSortRec(input, startIndex, endIndex);
 }
 
@@ -78,6 +76,6 @@ int main()
 		cin >> input[i];
 	mergeSort(input, length);
 	for (int i = 0; i < length; i += 1)
-		cout << input[i];
+		cout << input[i] << " ";
 	return 0;
 }
