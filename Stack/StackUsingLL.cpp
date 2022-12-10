@@ -1,10 +1,9 @@
 #include <iostream>
-#include "DynamicNode.h"
+#include "Node.h"
 using namespace std;
-template <typename T>
 class Stack
 {
-    Node<T> *head;
+    Node *head;
     int size; // number of elements present in the stack
 public:
     Stack()
@@ -12,56 +11,46 @@ public:
         head = NULL;
         size = 0;
     }
-    int getSize()
-    {
-
-        return size;
-    }
+    int getSize() { return size; }
     bool isEmpty()
     {
         // Implement the isEmpty() function
-        if (head == NULL)
-        {
-            cout << "Stack is empty\n";
-            return head;
-        }
+        return size == 0;
     }
 
-    void push(T element)
+    void push(int element)
     {
         // Implement the push() function
-        Node<T> *newNode = new Node(element);
+        Node *newNode = new Node(element);
         newNode->next = head;
         head = newNode;
+        size++;
     }
-    T pop()
+    int pop()
     {
         // Implement the pop() function
+        if (isEmpty())
+            return -1;
+        int ans = head->data;
         Node *temp = head;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        Node *tmpNode = temp->next;
-        temp->next = NULL;
-        delete tmpNode;
+        head = head->next;
+        delete temp;
+        size--;
+        return ans;
     }
 
-    T top()
+    int top()
     {
         // Implement the top() function
-        Node *temp = head;
-        while (temp != NULL)
-        {
-            temp = temp->next;
-        }
-        cout << "Last Element: " << temp->data;
+        if (isEmpty())
+            return -1;
+        return head->data;
     }
 };
 
 int main()
 {
-    Stack<int> st;
+    Stack st;
 
     int q;
     cin >> q;
