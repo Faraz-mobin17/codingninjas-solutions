@@ -20,7 +20,7 @@ bool isPermutation(char input1[], char input2[]) {
     for (int i = 0; i < NO_OF_CHARS; ++i) {
         if (arr[i] != arr2[i]) {
             return false;
-        }
+        } 
     }
     return true;
 }
