@@ -1,3 +1,4 @@
 *.exe
 sample.cpp
 .vscode
+*.class
