@@ -36,18 +36,22 @@ string getString(int digit)
     }
 }
 
-
-void printKeypad(int num) 
-{
-    if (num == 0) 
-    {
+void helperKeypadCode(int num, string str) {
+    if (num == 0) {
+        cout << str << endl;
         return;
     }
     int lastDigit = num % 10;
-    string outputStringFirst = getString(num);
-    string outputStringSecond = getString(lastDigit);
-    cout << outputStringFirst << outputStringSecond << endl;
-    printKeypad(num /= 10);
+    int smallNumber = num / 10;
+    string options = getString(lastDigit);
+    for (int i = 0; i < options.size(); ++i) {
+        helperKeypadCode(smallNumber,options[i] + str);
+    }
+}
+
+void printKeypad(int num) 
+{
+   helperKeypadCode(num,"");
 }
 
 int main()
