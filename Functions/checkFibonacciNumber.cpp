@@ -15,16 +15,14 @@ bool checkMember(int n){
     int currentNumber = 0;
     int nextNumber = 1;
     int fiboNum;
-    if (n== currentNumber || n == nextNumber) return true;
+    if (n== 0 || n == 1) return true;
     for (int i = 0; i <= n; ++i) {
           if (fiboNum == n) {
             return true;
         }
         fiboNum = currentNumber + nextNumber;
         currentNumber = nextNumber;
-        nextNumber = fiboNum;
-        
-      
+        nextNumber = fiboNum; 
     }
     return false;
 }
