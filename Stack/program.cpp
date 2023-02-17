@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Stack.cpp"
+#include "Stack.h"
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     s.push(30);
     s.push(40);
     s.push(50);
-
+    
     cout << "Element at the top is: " << s.top() << endl;
     cout << "Size of the Stack: " << s.size() << endl;
     cout << "Element deleted: " << s.pop() << endl;
