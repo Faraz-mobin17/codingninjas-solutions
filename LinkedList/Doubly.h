@@ -13,4 +13,15 @@ class Node {
         this -> next = next;
         this -> prev = prev;
      }
+    //  creating distructor
+    ~Node()
+    {
+        int value = this -> data;
+        if (next != NULL) 
+        {
+            delete next;
+            next = NULL;
+        }
+        cout << "memory free for node with data: " << value << "\n";
+    }
 };
