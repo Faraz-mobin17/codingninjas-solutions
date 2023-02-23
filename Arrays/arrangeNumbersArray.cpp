@@ -1,7 +1,5 @@
 #include <iostream>
 using namespace std;
-
-#include "solution.h"
 void arrange(int *arr, int n)
 {
     //Write your code here
