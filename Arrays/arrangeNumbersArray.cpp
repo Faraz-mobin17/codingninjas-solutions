@@ -20,6 +20,7 @@ void arrange(int *arr, int n)
     if (start == end) arr[start] = value;
 }
 
+
 int main()
 {
 	int t;
