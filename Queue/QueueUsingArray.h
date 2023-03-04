@@ -24,10 +24,11 @@ public:
 	{
 		return size == 0;
 	}
+	bool isFull() { return size == capacity; }
 	// insert an element
 	void enqueue(T element)
 	{
-		if (size == capacity)
+		if (isFull())
 		{
 			cout << "Queue is Full\n";
 			return;
