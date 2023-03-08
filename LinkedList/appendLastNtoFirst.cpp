@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Node.cpp"
+#include "Node.h"
 
 using namespace std;
 Node *appendLastNToFirst(Node *head, int n)
 {
 
-    if (n == 0 || head == NULL)
+    if (n == 0 || head == nullptr)
     {
         return head;
     }
@@ -15,13 +15,13 @@ Node *appendLastNToFirst(Node *head, int n)
 
     for (int i = 0; i < n; i += 1)
         fast = fast->next;
-    while (fast->next != NULL)
+    while (fast->next != nullptr)
     {
         slow = slow->next;
         fast = fast->next;
     }
     Node *temp = slow->next;
-    slow->next = NULL;
+    slow->next = nullptr;
     fast->next = inithead;
     head = temp;
     return head;
@@ -31,11 +31,11 @@ Node *takeinput()
 {
     int data;
     cin >> data;
-    Node *head = NULL, *tail = NULL;
+    Node *head = nullptr, *tail = nullptr;
     while (data != -1)
     {
         Node *newnode = new Node(data);
-        if (head == NULL)
+        if (head == nullptr)
         {
             head = newnode;
             tail = newnode;
@@ -53,7 +53,7 @@ Node *takeinput()
 void print(Node *head)
 {
     Node *temp = head;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
         cout << temp->data << " ";
         temp = temp->next;
