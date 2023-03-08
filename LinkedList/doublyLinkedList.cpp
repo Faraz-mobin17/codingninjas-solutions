@@ -123,24 +123,27 @@ int main(int argc, char const *argv[])
     // Node* tail = node;
     Node* head = NULL;
     Node* tail = NULL;
+    // printNode(head);
+
+    // insertAtHead(head,tail,1);
+    // printNode(head);
+
+    // insertAtHead(head,tail,13);
+    // printNode(head);
+
+    // insertAtHead(head,tail,8);
+    // printNode(head);
+
+    // insertAtHead(head,tail,25);
+    // printNode(head);
+
+    // insertAtPos(head,tail,2,100);
+    // printNode(head);
+
+    for (int i = 1; i <= 5; ++i) {
+        insertAtHead(head,tail,i);
+    }
     printNode(head);
-
-    insertAtHead(head,tail,11);
-    printNode(head);
-
-    insertAtHead(head,tail,13);
-    printNode(head);
-
-    insertAtHead(head,tail,8);
-    printNode(head);
-
-    insertAtHead(head,tail,25);
-    printNode(head);
-
-    insertAtPos(head,tail,2,100);
-    printNode(head);
-
-
     cout << endl;
     return 0;
 }
