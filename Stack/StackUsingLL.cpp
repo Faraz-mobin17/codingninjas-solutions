@@ -4,18 +4,18 @@ using namespace std;
 class Stack
 {
     Node *head;
-    int size; // number of elements present in the stack
+    static int length; // number of elements present in the stack
 public:
     Stack()
     {
         head = NULL;
-        size = 0;
+        length = 0;
     }
-    int getSize() { return size; }
+    int getlength() { return length; }
     bool isEmpty()
     {
         // Implement the isEmpty() function
-        return size == 0;
+        return length == 0;
     }
 
     void push(int element)
@@ -24,7 +24,7 @@ public:
         Node *newNode = new Node(element);
         newNode->next = head;
         head = newNode;
-        size++;
+        length++;
     }
     int pop()
     {
@@ -35,7 +35,7 @@ public:
         Node *temp = head;
         head = head->next;
         delete temp;
-        size--;
+        length--;
         return ans;
     }
 
@@ -72,7 +72,7 @@ int main()
             cout << st.top() << "\n";
             break;
         case 4:
-            cout << st.getSize() << "\n";
+            cout << st.getlength() << "\n";
             break;
         default:
             cout << ((st.isEmpty()) ? "true\n" : "false\n");
