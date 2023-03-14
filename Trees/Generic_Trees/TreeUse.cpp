@@ -174,7 +174,7 @@ void preeOrder(TreeNode<int> *root)
 }
 void postOrder(TreeNode<int> *root)
 {
-    if (root == nullptr)
+    if (root == nullptr) // edge case
         return;
     for (int i = 0; i < root->children.size(); i += 1)
         postOrder(root->children[i]);
