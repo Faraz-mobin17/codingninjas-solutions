@@ -17,24 +17,24 @@ Node *takeInputLevelWise()
     pendingNodes.push(root);
     while (!pendingNodes.empty())
     {
-        Node *front = pendingNodes.front();
+        Node *frontNode = pendingNodes.front();
         pendingNodes.pop();
-        cout << "Enter left child data of: " << front->data << endl;
+        cout << "Enter left child data of: " << frontNode->data << endl;
         int leftChildData;
         cin >> leftChildData;
         if (leftChildData != -1)
         {
             Node *child = new Node(leftChildData);
-            front->left = child;
+            frontNode->left = child;
             pendingNodes.push(child);
         }
-        cout << "Enter right child data of: " << front->data << endl;
+        cout << "Enter right child data of: " << frontNode->data << endl;
         int rightChildData;
         cin >> rightChildData;
         if (rightChildData != -1)
         {
             Node *child = new Node(rightChildData);
-            front->right = child;
+            frontNode->right = child;
             pendingNodes.push(child);
         }
     }
@@ -68,26 +68,26 @@ void printLevelWise(Node *root)
     pendingNodes.push(root);
     while (!pendingNodes.empty())
     {
-        Node *front = pendingNodes.front();
+        Node *frontNode = pendingNodes.front();
         pendingNodes.pop();
-        cout << front->data << ":";
-        if (front->left != nullptr)
+        cout << frontNode->data << ":";
+        if (frontNode->left != nullptr)
         {
-            cout << front->left->data << ",";
-            pendingNodes.push(front->left);
+            cout << frontNode->left->data << ",";
+            pendingNodes.push(frontNode->left);
         }
-        else if (front->left == nullptr)
+        else if (frontNode->left == nullptr)
         {
             cout << "L:"
                  << "-1"
                  << ",";
         }
-        if (front->right != nullptr)
+        if (frontNode->right != nullptr)
         {
-            cout << front->right->data;
-            pendingNodes.push(front->right);
+            cout << frontNode->right->data;
+            pendingNodes.push(frontNode->right);
         }
-        else if (front->right == nullptr)
+        else if (frontNode->right == nullptr)
         {
             cout << "R:"
                  << "-1";
