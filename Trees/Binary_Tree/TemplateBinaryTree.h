@@ -8,8 +8,8 @@ public:
     Node(T data)
     {
         this->data = data;
-        this->left = NULL;
-        this->right = NULL;
+        this->left = nullptr;
+        this->right = nullptr;
     }
     ~Node()
     {
