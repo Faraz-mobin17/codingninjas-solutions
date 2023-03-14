@@ -93,6 +93,20 @@ void printAtLevelK(TreeNode<int> *root, int k)
         printAtLevelK(root->children[i], k - 1);
     }
 }
+int getLeafNodeCount(TreeNode<int> *root)
+{
+    // Write your code here
+    int count = 0;
+    if (root->children.size() == 0)
+    {
+        count++;
+    }
+    for (int i = 0; i < root->children.size(); ++i)
+    {
+        count += getLeafNodeCount(root->children[i]);
+    }
+    return count;
+}
 // returns the number of nodes in the tree
 int numNodes(TreeNode<int> *root)
 {
@@ -144,7 +158,28 @@ void printTree(TreeNode<int> *root)
         printTree(root->children[i]);
     }
 }
-
+// 1 3 2 3 4 2 5 6 2 7 8 0 0 0 0 1 9 0
+void preeOrder(TreeNode<int> *root)
+{
+    if (root == nullptr) // edge case
+    {
+        cout << "null";
+        return;
+    }
+    cout << root->data << " ";
+    for (int i = 0; i < root->children.size(); ++i)
+    {
+        preeOrder(root->children[i]); // print children
+    }
+}
+void postOrder(TreeNode<int> *root)
+{
+    if (root == nullptr)
+        return;
+    for (int i = 0; i < root->children.size(); i += 1)
+        postOrder(root->children[i]);
+    cout << root->data << " ";
+}
 int main(int argc, char const *argv[])
 {
     // TreeNode<int> *root = new TreeNode<int>(1);
@@ -153,7 +188,11 @@ int main(int argc, char const *argv[])
     // root->children.push_back(node1);
     // root->children.push_back(node2);
     TreeNode<int> *root = takeInputLevelWise();
-    printTree(root);
+    // printTree(root);
+    // int ans = getLeafNodeCount(root);
+    // cout << "Number of leaf Nodes: " << ans;
+    // preeOrder(root);
+    postOrder(root);
     // TODO: delete tree
     delete root;
     return 0;
