@@ -194,6 +194,6 @@ int main(int argc, char const *argv[])
     // preeOrder(root);
     postOrder(root);
     // TODO: delete tree
-    delete root;
+    delete root; // destructor called
     return 0;
 }
