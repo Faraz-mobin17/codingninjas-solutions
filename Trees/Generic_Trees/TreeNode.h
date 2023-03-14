@@ -14,6 +14,7 @@ public:
     }
     ~TreeNode()
     {
+        cout << "\n";
         for (int i = 0; i < children.size(); i++)
         {
             cout << (children[i]->data) << " Nodes Data Deleted\n";
