@@ -60,6 +60,25 @@ Node *newNode(int data)
     Node *newNode = new Node(data);
     return (newNode);
 }
+// 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
+int numNodes(Node *root)
+{
+    if (root == nullptr)
+    {
+        return 0;
+    }
+    int ans = 0;
+    ans = numNodes(root->left) + numNodes(root->right);
+    return (1 + ans); // return 1 + numNodes(root->left) + numNodes(root->right);
+}
+int sumNodes(Node *root)
+{
+    if (root == nullptr)
+        return 0;
+    int sum = 0;
+    //
+    return sum;
+}
 void printLevelWise(Node *root)
 {
     if (root == nullptr)
@@ -120,6 +139,8 @@ int main(int argc, char const *argv[])
     // Node *root = takeInput();
     Node *root = takeInputLevelWise();
     printTree(root);
+    int ans = numNodes(root);
+    cout << "Num of nodes: " << ans;
     delete root;
     return 0;
 }
