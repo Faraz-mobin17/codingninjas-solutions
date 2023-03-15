@@ -128,6 +128,26 @@ void mirrorBinaryTree(Node *root)
     mirrorBinaryTree(root->left);  // it will give you left child
     mirrorBinaryTree(root->right); // it will give you right child
 }
+void preOrder(Node *root)
+{
+    // Write your code here
+    if (root == nullptr)
+        return;
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+void inOrderTraversal(Node *root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+
+    inOrderTraversal(root->left);
+    cout << root->data << " ";
+    inOrderTraversal(root->right);
+}
 int height(Node *root)
 {
     // Write our code here
@@ -196,9 +216,10 @@ int main(int argc, char const *argv[])
     // Node *node2 = new Node(3);
     // Node *root = takeInput();
     Node *root = takeInputLevelWise();
-    printTree(root);
-    int ans = numNodes(root);
-    cout << "Num of nodes: " << ans;
+    // printTree(root);
+    // int ans = numNodes(root);
+    // cout << "Num of nodes: " << ans;
+    inOrderTraversal(root);
     delete root;
     return 0;
 }
