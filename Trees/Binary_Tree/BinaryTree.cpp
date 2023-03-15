@@ -117,6 +117,17 @@ bool isNodePresentBetter(Node *root, int x)
         return true;
     return isNodePresent(root->left, x) || isNodePresent(root->right, x);
 }
+void mirrorBinaryTree(Node *root)
+{
+    // Write your code here
+    if (root == nullptr)
+        return;
+    Node *tmpNodeLeft = root->left;
+    root->left = root->right;
+    root->right = tmpNodeLeft;
+    mirrorBinaryTree(root->left);  // it will give you left child
+    mirrorBinaryTree(root->right); // it will give you right child
+}
 int height(Node *root)
 {
     // Write our code here
