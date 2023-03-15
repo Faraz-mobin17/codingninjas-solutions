@@ -79,6 +79,37 @@ int sumNodes(Node *root)
     //
     return sum;
 }
+bool isNodePresent(Node *root, int x)
+{
+    // Write your code here
+    if (root == nullptr)
+        return false;
+    queue<Node *> pendingNodes;
+    pendingNodes.push(root);
+    while (!pendingNodes.empty())
+    {
+        Node *front = pendingNodes.front();
+        pendingNodes.pop();
+        if (front->data == x)
+        {
+            return true;
+        }
+        if (front->left != nullptr)
+        {
+            if (front->left->data == x)
+                return true;
+            pendingNodes.push(front->left);
+        }
+        if (front->right != nullptr)
+        {
+            if (front->right->data == x)
+                return true;
+            pendingNodes.push(front->right);
+        }
+    }
+    return false;
+}
+
 void printLevelWise(Node *root)
 {
     if (root == nullptr)
