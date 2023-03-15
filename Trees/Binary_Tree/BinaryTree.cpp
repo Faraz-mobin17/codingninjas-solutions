@@ -137,6 +137,15 @@ void preOrder(Node *root)
     preOrder(root->left);
     preOrder(root->right);
 }
+void postOrder(Node *root)
+{
+    // Write your code here
+    if (root == nullptr)
+        return;
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << " ";
+}
 void inOrderTraversal(Node *root)
 {
     if (root == nullptr)
