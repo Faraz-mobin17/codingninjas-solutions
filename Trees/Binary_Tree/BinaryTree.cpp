@@ -109,6 +109,14 @@ bool isNodePresent(Node *root, int x)
     }
     return false;
 }
+bool isNodePresentBetter(Node *root, int x)
+{
+    if (root == nullptr)
+        return false;
+    if (root->data == x)
+        return true;
+    return isNodePresent(root->left, x) || isNodePresent(root->right, x);
+}
 int height(Node *root)
 {
     // Write our code here
