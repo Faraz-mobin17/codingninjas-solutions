@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(int argc, char const *argv[])
@@ -41,9 +40,18 @@ int main(int argc, char const *argv[])
 
     for (int i = 0; i < 100; i += 1)
     {
-        cout << "Capacity: " << v.capacity() << endl;
-        cout << "Size: " << v.size() << endl;
+        // cout << "Capacity: " << v.capacity() << endl;
+        // cout << "Size: " << v.size() << endl;
         v.push_back(i + 1);
     }
+    // cout << endl;
+    // int n = v.size();
+    // sort(v.begin(), v.end());
+    // for (int i = 0; i < v.size(); i += 1)
+    // {
+    //     cout << v[i] << endl;
+    // }
+    int minEl = *min_element(v.begin(), v.end());
+    cout << minEl;
     return 0;
 }
