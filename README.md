@@ -52,8 +52,6 @@
 
 # Searching:
 
-# Problems:
-
 ## Easy
 
 - [Square Root](https://leetcode.com/problems/sqrtx/)
@@ -106,8 +104,6 @@
 - [Divide Chocolate Problem](https://curiouschild.github.io/leetcode/2019/06/21/divide-chocolate.html)
 
 # Sorting:
-
-# Problems:
 
 ## Easy
 
