@@ -5,18 +5,18 @@ using namespace std;
 // TC O(n)
 Node *reverseLinkedListRec_best(Node *head)
 {
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
         return head;
     Node *smallAns = reverseLinkedListRec_best(head->next);
     Node *tail = head->next;
     tail->next = head;
-    head->next = NULL;
+    head->next = nullptr;
     return smallAns;
 }
 // this solution is used to show how we can return multiple params from function. TC =  O(n)
 Pair reverseLinkedListRec_better(Node *head)
 {
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
     {
         Pair ans;
         ans.head = head;
@@ -25,7 +25,7 @@ Pair reverseLinkedListRec_better(Node *head)
     }
     Pair smallAns = reverseLinkedListRec_better(head->next);
     smallAns.tail->next = head;
-    head->next = NULL;
+    head->next = nullptr;
     Pair ans;
     ans.head = smallAns.head;
     ans.tail = head;
@@ -40,14 +40,14 @@ Node *reverseLL_better(Node *head)
 Node *reverseLinkedListRec(Node *head)
 {
     // Write your code here
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
         return head;
     Node *smallAns = reverseLinkedListRec(head->next);
     Node *temp = smallAns;
-    while (temp->next != NULL)
+    while (temp->next != nullptr)
         temp = temp->next;
     temp->next = head;
-    head->next = NULL;
+    head->next = nullptr;
     return smallAns;
 }
 
@@ -55,11 +55,11 @@ Node *takeinput()
 {
     int data;
     cin >> data;
-    Node *head = NULL, *tail = NULL;
+    Node *head = nullptr, *tail = nullptr;
     while (data != -1)
     {
         Node *newnode = new Node(data);
-        if (head == NULL)
+        if (head == nullptr)
         {
             head = newnode;
             tail = newnode;
@@ -77,7 +77,7 @@ Node *takeinput()
 void print(Node *head)
 {
     Node *temp = head;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
         cout << temp->data << " ";
         temp = temp->next;
