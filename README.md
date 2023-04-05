@@ -15,7 +15,7 @@
 I would recommend Java to learn data strcture and algorithms because it is intermediate language
 between cpp and python. cpp is not so beginners friendly and python is too easy so choose java. once you learn java then other language will be easy to grab plus java is widly used in industry and if you learn DSA with java you can build projects later on with the same language whilst in cpp projects are difficult to make as compare to java and because of this you have to learn another language with is good but my recommendation is stick with java so learn the basics concepts in java and learn DSA then learn how to build project with the language learning one language will give you good grasp on it and spending time with one language will help to understand language easily. since java is widly used in industry there is much chance that once you join the company you will be working on it you won't find much use of cpp once you join the company plus there are lot more resources to learn java than cpp and with java it is easy to learn Database connectivity, multithreading , build enterprise level applications easily and contribute to open source as compare to cpp.
 
-### some resources to learn DSA with JAVA
+### Some resources to learn DSA with JAVA
 
 - [college wallah](https://www.example.com)
 - [kunal kushwaha](https://www.example.com)
