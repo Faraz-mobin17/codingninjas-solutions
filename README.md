@@ -17,15 +17,15 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 
 ### Some resources to learn DSA with JAVA
 
-- [college wallah](https://www.example.com)
-- [kunal kushwaha](https://www.example.com)
-- [pepcoding](https://www.example.com)
-- [williamfiset](https://www.example.com)
-- [codingninjas course DSA with Java](https://www.example.com)
-- [GFG self paced DSA course](https://www.example.com)
-- [alpha apna college](https://www.example.com)
-- [pwskills course](https://pwskills.com/category/Java-with-DSA-&-System-Design)
-- [codingblocks course](https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo)
+- [college wallah](https://www.example.com) - <strong>FREE</strong>
+- [kunal kushwaha](https://www.example.com) - <strong>FREE</strong>
+- [pepcoding](https://www.example.com) - <strong>FREE</strong>
+- [williamfiset](https://www.example.com) - <strong>FREE</strong>
+- [codingninjas course DSA with Java](https://www.example.com) - <strong>PAID</strong>
+- [GFG self paced DSA course](https://www.example.com) - <strong>PAID</strong>
+- [alpha apna college](https://www.example.com) - <strong>PAID</strong>
+- [pwskills course](https://pwskills.com/category/Java-with-DSA-&-System-Design) - <strong>PAID</strong>
+- [codingblocks course](https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo) - <strong>PAID</strong>
 
 ### Articles
 
