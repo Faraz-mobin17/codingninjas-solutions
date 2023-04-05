@@ -10,7 +10,13 @@ int getCodes(string input, string output[10000]) {
     Also, return the number of codes return to the output string. 
     You do not need to print anything.
     */
-
+   if (input.empty()) {
+        output[0] = "";
+        return 1;
+   }
+    int smallOutput = getCodes(input.substr(1),output);
+    int smallOutputTwo = getCodes(input.substr(2),output);
+    
 }
 
 
