@@ -200,6 +200,37 @@ Node *buildTree(int *in, int *pre, int size)
 {
     return buildTreeHelper(in, pre, 0, size - 1, 0, size - 1);
 }
+int diameter(Node *root)
+{
+    if (root == nullptr)
+        return 0;
+    int option1 = height(root->left) + height(root->right);
+    int option2 = diameter(root->left);
+    int option3 = diameter(root->right);
+    return max(option1, option2, option3);
+}
+pair<int, int> heightDiameter(Node *root)
+{
+    if (root == nullptr)
+    {
+        pair<int, int> p;
+        p.first = 0;
+        p.second = 0;
+        return p;
+    }
+    pair<int, int> leftAns = heightDiameter(root->left);
+    pair<int, int> rightAns = heightDiameter(root->right);
+    int leftHeight = leftAns.first;
+    int leftDiameter = leftAns.second;
+    int rightHeight = rightAns.first;
+    int rightDiameter = rightAns.second;
+    int maxHeight = 1 + max(leftHeight, rightHeight);
+    int maxDiameter = max(leftHeight + rightHeight, max(leftDiameter, rightDiameter));
+    pair<int, int> p;
+    p.first = maxHeight;
+    p.second = maxDiameter;
+    return p;
+}
 void printLevelWise(Node *root)
 {
     if (root == nullptr)
@@ -262,12 +293,16 @@ int main(int argc, char const *argv[])
     // printTree(root);
     // int ans = numNodes(root);
     // cout << "Num of nodes: " << ans;
-    int in[] = {4, 2, 5, 1, 8, 6, 9, 3, 7};
-    int pre[] = {1, 2, 4, 5, 3, 6, 8, 9, 7};
-    Node *root = buildTree(in, pre, 9);
-    printTree(root);
-    cout << "Num: " << numNodes(root) << endl;
-    inOrderTraversal(root);
+    // int in[] = {4, 2, 5, 1, 8, 6, 9, 3, 7};
+    // int pre[] = {1, 2, 4, 5, 3, 6, 8, 9, 7};
+    // Node *root = buildTree(in, pre, 9);
+    Node *root = takeInputLevelWise();
+    // printTree(root);
+    // cout << "Num: " << numNodes(root) << endl;
+    // inOrderTraversal(root);
+    pair<int, int> p = heightDiameter(root);
+    cout << "Height: " << p.first << endl;
+    cout << "Diameter: " << p.second << endl;
     delete root;
     return 0;
 }
