@@ -1,5 +1,6 @@
 #include <iostream>
 #include <climits>
+#include <queue>
 #include "Node.h"
 using namespace std;
 
@@ -10,6 +11,44 @@ public:
 	int minimum;
 	int maximum;
 };
+Node *takeInputLevelWise()
+{
+	// we will use queue to enter data
+	int rootData;
+	cout << "Enter Data: " << endl;
+	cin >> rootData;
+	if (rootData == -1)
+	{
+		return nullptr;
+	}
+	Node *root = new Node(rootData);
+	queue<Node *> pendingNodes;
+	pendingNodes.push(root);
+	while (!pendingNodes.empty())
+	{
+		Node *frontNode = pendingNodes.front();
+		pendingNodes.pop();
+		cout << "Enter left child data of: " << frontNode->data << endl;
+		int leftChildData;
+		cin >> leftChildData;
+		if (leftChildData != -1)
+		{
+			Node *child = new Node(leftChildData);
+			frontNode->left = child;
+			pendingNodes.push(child);
+		}
+		cout << "Enter right child data of: " << frontNode->data << endl;
+		int rightChildData;
+		cin >> rightChildData;
+		if (rightChildData != -1)
+		{
+			Node *child = new Node(rightChildData);
+			frontNode->right = child;
+			pendingNodes.push(child);
+		}
+	}
+	return root;
+}
 
 IsBSTReturn isBST2(Node *root)
 {
@@ -83,7 +122,30 @@ bool searchInBST(Node *root, int k)
 	}
 	return searchInBST(root->right, k);
 }
-
+void preOrder(Node *root)
+{
+	if (root == nullptr)
+		return;
+	cout << root->data << " ";
+	preOrder(root->left);
+	preOrder(root->right);
+}
+void postOrder(Node *root)
+{
+	if (root == nullptr)
+		return;
+	postOrder(root->left);
+	postOrder(root->right);
+	cout << root->data << " ";
+}
+void inOrder(Node *root)
+{
+	if (root == nullptr)
+		return;
+	inOrder(root->left);
+	cout << root->data << " ";
+	inOrder(root->right);
+}
 int main(int argc, char const *argv[])
 {
 	Node *root = takeInputLevelWise();
