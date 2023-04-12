@@ -2,17 +2,14 @@ template <typename T>
 class QueueUsingArray
 {
 	T *data;
-	int nextIndex;
-	int size;
-	int firstIndex;
-	int capacity;
+	int front, rear, size, capacity;
 
 public:
 	QueueUsingArray(int s)
 	{
 		data = new T[s];
-		nextIndex = 0;
-		firstIndex = -1;
+		rear = 0;
+		front = -1;
 		size = 0;
 		capacity = s;
 	}
@@ -34,11 +31,11 @@ public:
 			return;
 		}
 
-		data[nextIndex] = element;
-		nextIndex = (nextIndex + 1) % capacity;
-		if (firstIndex == -1)
+		data[rear] = element;
+		rear = (rear + 1) % capacity;
+		if (front == -1)
 		{
-			firstIndex = 0;
+			front = 0;
 		}
 		size++;
 	}
@@ -49,7 +46,7 @@ public:
 			cout << "Queue is empty: \n";
 			return 0;
 		}
-		return data[firstIndex];
+		return data[front];
 	}
 	T dequeue()
 	{
@@ -58,13 +55,13 @@ public:
 			cout << "Queue is empty: \n";
 			return 0;
 		}
-		T ans = data[firstIndex];
-		firstIndex = (firstIndex + 1) % capacity;
+		T ans = data[front];
+		front = (front + 1) % capacity;
 		size--;
 		if (size == 0)
 		{
-			firstIndex = -1;
-			nextIndex = 0;
+			front = -1;
+			rear = 0;
 		}
 		return ans;
 	}
