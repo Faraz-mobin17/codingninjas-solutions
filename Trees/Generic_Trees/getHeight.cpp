@@ -63,4 +63,5 @@ int main()
 {
     TreeNode<int> *root = takeInputLevelWise();
     cout << getHeight(root);
+    return 0;
 }
