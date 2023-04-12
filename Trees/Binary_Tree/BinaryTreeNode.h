@@ -11,4 +11,11 @@ public:
         this->left = nullptr;
         this->right = nullptr;
     }
+    ~Node()
+    {
+        if (left)
+            delete left;
+        if (right)
+            delete right;
+    }
 };
