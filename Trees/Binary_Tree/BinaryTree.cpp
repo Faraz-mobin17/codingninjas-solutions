@@ -337,25 +337,28 @@ bool isBalanced(Node *root)
     int finalHeight = abs(leftHeight - rightHeight);
     return finalHeight <= 1 && isBalanced(root->left) && isBalanced(root->right);
 }
-bool isBalanced(Node *root)
+class BalancedReturnType
 {
-    if (root == nullptr)
+public:
+    int height;
+    bool balanced;
+    BalancedReturnType(int height, bool balanced)
     {
-        return true;
+        this->height = height;
+        this->balanced = balanced;
     }
-    return isBalancedHelper(root)->isBalanced;
-}
+};
+
 BalancedReturnType *isBalancedHelper(Node *root)
 {
     if (root == nullptr)
     {
-        BalancedReturnType *ans = new BalancedReturnType(0, true);
-        return ans;
+        return new BalancedReturnType(0, true);
     }
     BalancedReturnType *ans1 = isBalancedHelper(root->left);
     BalancedReturnType *ans2 = isBalancedHelper(root->right);
     bool flag;
-    if (!(ans1->isBalanced) || !(ans2->isBalanced) || abs(ans1->height - ans2->height) > 1)
+    if (!(ans1->balanced) || !(ans2->balanced) || abs(ans1->height - ans2->height) > 1)
     {
         flag = false;
     }
@@ -363,9 +366,17 @@ BalancedReturnType *isBalancedHelper(Node *root)
     {
         flag = true;
     }
-    int maxHeight = max(ans1->height, ans2->height);
-    BalancedReturnType *output = new BalancedReturnType(maxHeight, flag);
-    return output;
+    int height = 1 + max(ans1->height, ans2->height);
+    return new BalancedReturnType(height, flag);
+}
+
+bool isBalanced(Node *root)
+{
+    if (root == nullptr)
+    {
+        return true;
+    }
+    return isBalancedHelper(root)->balanced;
 }
 int main(int argc, char const *argv[])
 {
