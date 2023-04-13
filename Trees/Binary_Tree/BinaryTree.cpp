@@ -2,6 +2,17 @@
 #include <queue>
 #include "BinaryTreeNode.h"
 #include <climits>
+class BalancedReturnType
+{
+public:
+    int height;
+    bool isBalanced;
+    BalancedReturnType(int height, bool isBalanced)
+    {
+        this->height = height;
+        this->isBalanced = isBalanced;
+    }
+};
 Node *takeInputLevelWise()
 {
     // we will use queue to enter data
@@ -314,6 +325,47 @@ pair<int, int> getMinAndMax(Node *root)
     p.first = min;
     p.second = max;
     return p;
+}
+bool isBalanced(Node *root)
+{
+    if (root == nullptr)
+    {
+        return true;
+    }
+    int leftHeight = height(root->left);
+    int rightHeight = height(root->right);
+    int finalHeight = abs(leftHeight - rightHeight);
+    return finalHeight <= 1 && isBalanced(root->left) && isBalanced(root->right);
+}
+bool isBalanced(Node *root)
+{
+    if (root == nullptr)
+    {
+        return true;
+    }
+    return isBalancedHelper(root)->isBalanced;
+}
+BalancedReturnType *isBalancedHelper(Node *root)
+{
+    if (root == nullptr)
+    {
+        BalancedReturnType *ans = new BalancedReturnType(0, true);
+        return ans;
+    }
+    BalancedReturnType *ans1 = isBalancedHelper(root->left);
+    BalancedReturnType *ans2 = isBalancedHelper(root->right);
+    bool flag;
+    if (!(ans1->isBalanced) || !(ans2->isBalanced) || abs(ans1->height - ans2->height) > 1)
+    {
+        flag = false;
+    }
+    else
+    {
+        flag = true;
+    }
+    int maxHeight = max(ans1->height, ans2->height);
+    BalancedReturnType *output = new BalancedReturnType(maxHeight, flag);
+    return output;
 }
 int main(int argc, char const *argv[])
 {
