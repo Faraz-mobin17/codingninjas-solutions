@@ -6,13 +6,14 @@ class BalancedReturnType
 {
 public:
     int height;
-    bool isBalanced;
-    BalancedReturnType(int height, bool isBalanced)
+    bool balanced;
+    BalancedReturnType(int height, bool balanced)
     {
         this->height = height;
-        this->isBalanced = isBalanced;
+        this->balanced = balanced;
     }
 };
+
 Node *takeInputLevelWise()
 {
     // we will use queue to enter data
@@ -337,17 +338,6 @@ bool isBalanced(Node *root)
     int finalHeight = abs(leftHeight - rightHeight);
     return finalHeight <= 1 && isBalanced(root->left) && isBalanced(root->right);
 }
-class BalancedReturnType
-{
-public:
-    int height;
-    bool balanced;
-    BalancedReturnType(int height, bool balanced)
-    {
-        this->height = height;
-        this->balanced = balanced;
-    }
-};
 
 BalancedReturnType *isBalancedHelper(Node *root)
 {
