@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include "BinaryTreeNode.h"
-
+#include <climits>
 Node *takeInputLevelWise()
 {
     // we will use queue to enter data
@@ -282,6 +282,38 @@ void printTree(Node *root)
     cout << endl;
     printTree(root->left);
     printTree(root->right);
+}
+int maximum(Node *root)
+{
+    if (root == nullptr)
+        return INT_MIN;
+    return max(root->data, max(maximum(root->left), maximum(root->right)));
+}
+
+int minimum(Node *root)
+{
+    if (root == nullptr)
+    {
+        return INT_MAX;
+    }
+    return min(root->data, min(minimum(root->left), minimum(root->right)));
+}
+pair<int, int> getMinAndMax(Node *root)
+{
+    // Write your code here
+    if (root == nullptr)
+    {
+        pair<int, int> p;
+        p.first = 0;
+        p.second = 0;
+        return p;
+    }
+    int max = maximum(root);
+    int min = minimum(root);
+    pair<int, int> p;
+    p.first = min;
+    p.second = max;
+    return p;
 }
 int main(int argc, char const *argv[])
 {
