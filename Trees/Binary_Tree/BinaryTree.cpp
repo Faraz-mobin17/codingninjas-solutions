@@ -75,9 +75,9 @@ int sumNodes(Node *root)
 {
     if (root == nullptr)
         return 0;
-    int sum = 0;
-    //
-    return sum;
+    int leftSum = sumNodes(root->left);
+    int rightSum = sumNodes(root->right);
+    return (root->data + leftSum + rightSum);
 }
 bool isNodePresent(Node *root, int x)
 {
