@@ -219,7 +219,7 @@ int diameter(Node *root)
     int option1 = height(root->left) + height(root->right);
     int option2 = diameter(root->left);
     int option3 = diameter(root->right);
-    return max(option1, option2, option3);
+    return max(option1, max(option2, option3));
 }
 pair<int, int> heightDiameter(Node *root)
 {
@@ -237,11 +237,47 @@ pair<int, int> heightDiameter(Node *root)
     int rightHeight = rightAns.first;
     int rightDiameter = rightAns.second;
     int maxHeight = 1 + max(leftHeight, rightHeight);
-    int maxDiameter = max(leftHeight + rightHeight, max(leftDiameter, rightDiameter));
+    int finalHeight = leftHeight + rightHeight;
+    int maxDiameter = max(finalHeight, max(leftDiameter, rightDiameter));
     pair<int, int> p;
     p.first = maxHeight;
     p.second = maxDiameter;
     return p;
+}
+void levelOrderTraversal(Node *root)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+    queue<Node *> pendingNodes;
+    pendingNodes.push(root);
+    pendingNodes.push(nullptr);
+    while (!pendingNodes.empty())
+    {
+        Node *front = pendingNodes.front(); // storing the first node
+        pendingNodes.pop();                 // removing the node from queue
+        if (front == nullptr)               // checking if that node is null if yes
+        {
+            cout << "\n";              // printing new line
+            if (!pendingNodes.empty()) // if queue is not empty push null to queue
+            {
+                pendingNodes.push(nullptr);
+            }
+        }
+        else
+        {
+            cout << front->data << " "; // if node is not null print data
+            if (front->left != nullptr) //  left child is not null
+            {
+                pendingNodes.push(front->left); // push left child
+            }
+            if (front->right != nullptr) // right child is not null
+            {
+                pendingNodes.push(front->right); // push right child
+            }
+        }
+    }
 }
 void printLevelWise(Node *root)
 {
@@ -382,13 +418,24 @@ int main(int argc, char const *argv[])
     // int in[] = {4, 2, 5, 1, 8, 6, 9, 3, 7};
     // int pre[] = {1, 2, 4, 5, 3, 6, 8, 9, 7};
     // Node *root = buildTree(in, pre, 9);
-    Node *root = takeInputLevelWise();
+    // Node *root = takeInputLevelWise();
+    Node *root = new Node(1);
+    root->left = new Node(2);
+    root->right = new Node(3);
+    root->left->left = new Node(4);
+    root->left->right = new Node(5);
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
+    root->left->right->left = new Node(8);
+    root->left->right->right = new Node(9);
     // printTree(root);
     // cout << "Num: " << numNodes(root) << endl;
     // inOrderTraversal(root);
-    pair<int, int> p = heightDiameter(root);
-    cout << "Height: " << p.first << endl;
-    cout << "Diameter: " << p.second << endl;
+    // pair<int, int> p = heightDiameter(root);
+    // cout << "Height: " << p.first << endl;
+    // cout << "Diameter: " << p.second << endl;
+    // isBalanced(root);
+    levelOrderTraversal(root);
     delete root;
     return 0;
 }
