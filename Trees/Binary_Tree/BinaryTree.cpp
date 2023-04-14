@@ -251,8 +251,8 @@ void levelOrderTraversal(Node *root)
         return;
     }
     queue<Node *> pendingNodes;
-    pendingNodes.push(root);
-    pendingNodes.push(nullptr);
+    pendingNodes.push(root);    // push root node
+    pendingNodes.push(nullptr); // and push null to give new line after first node
     while (!pendingNodes.empty())
     {
         Node *front = pendingNodes.front(); // storing the first node
@@ -404,6 +404,23 @@ bool isBalanced2(Node *root)
         return true;
     }
     return isBalancedHelper(root)->balanced;
+}
+Node *removeLeafNodes(Node *root)
+{
+    // Write your code here
+    if (root == nullptr)
+    {
+        return root;
+    }
+    if (root->left == nullptr && root->right == nullptr)
+    {
+        root = nullptr;
+        return root;
+    }
+    Node *updatedLeft = removeLeafNodes(root->left);
+    Node *updatedRight = removeLeafNodes(root->right);
+    root->left = updatedLeft;
+    root->right = updatedRight;
 }
 int main(int argc, char const *argv[])
 {
