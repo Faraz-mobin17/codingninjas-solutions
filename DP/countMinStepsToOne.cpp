@@ -91,4 +91,5 @@ int main()
     int n;
     cin >> n;
     cout << countMinStepsToOne(n);
+    return 0;
 }
