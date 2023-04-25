@@ -1,5 +1,5 @@
 #include <iostream>
-#include "StackUsingTemplate.cpp"
+#include "StackUsingTemplate.h"
 using namespace std;
 
 int main(int argc, char const *argv[])

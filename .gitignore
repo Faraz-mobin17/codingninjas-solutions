@@ -1,4 +1,8 @@
 *.exe
 sample.cpp
 .vscode
+<<<<<<< Updated upstream
 *.class
+=======
+.class
+>>>>>>> Stashed changes

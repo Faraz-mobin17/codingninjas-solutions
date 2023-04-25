@@ -6,14 +6,15 @@ using namespace std;
 Node *reverseLinkedList(Node *head)
 {
     // write some code here
-    Node *prev = NULL;
+    Node *prev = nullptr;
     Node *current = head;
-    while (current != NULL)
+    Node *next;
+    while (current != nullptr)
     {
-        Node *temp = current->next;
+        next = current->next;
         current->next = prev;
         prev = current;
-        current = temp;
+        current = next;
     }
     return prev;
 }

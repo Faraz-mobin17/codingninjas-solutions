@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "Node.cpp"
+#include "Node.h"
 
 Node *takeInput_Better()
 {

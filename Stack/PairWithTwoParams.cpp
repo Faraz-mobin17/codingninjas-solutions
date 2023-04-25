@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Pair2.cpp"
+#include "Pair.h"
 using namespace std;
 
 int main(int argc, char const *argv[])

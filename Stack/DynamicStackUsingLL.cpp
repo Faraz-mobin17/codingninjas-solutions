@@ -2,6 +2,10 @@
 #include "DynamicNode.h"
 using namespace std;
 template <typename T>
+/*
+* we are not maintaining the tail pointer because we are pushing at first so that
+* pop() time complexity can become O(1)
+*/
 class Stack
 {
     Node<T> *head;
