@@ -26,7 +26,10 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 - [alpha apna college](https://www.example.com) - <strong>PAID</strong>
 - [pwskills course](https://pwskills.com/category/Java-with-DSA-&-System-Design) - <strong>PAID</strong>
 - [codingblocks course](https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo) - <strong>PAID</strong>
+- [Anuj bhaiya Youtube](https://www.youtube.com/@AnujBhaiya) - <strong>FREE</strong>
 
+### Practice DSA with SDE sheet
+- [SDE Sheet Fraz](https://leadcoding.in/dsa-sheet/)
 ### Articles
 
 - [Comprehensive Guide to learn DSA - Leetcode](https://leetcode.com/discuss/general-discussion/494279/Comprehensive-Data-Structure-and-Algorithm-Study-Guide)
