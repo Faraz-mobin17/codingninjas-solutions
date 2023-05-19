@@ -1,6 +1,6 @@
 #include <iostream>
-#include "QueueUsingArray.h"
 using namespace std;
+#include "QueueUsingArray.h"
 int main(int argc, char const *argv[])
 {
 	/* code */
@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 	q.enqueue(40);
 	q.enqueue(50);
 	q.enqueue(60);
-	cout << q.front() << endl;
+	cout << q.frontElement() << endl;
 	cout << q.dequeue() << endl;
 	cout << q.dequeue() << endl;
 	cout << q.dequeue() << endl;
