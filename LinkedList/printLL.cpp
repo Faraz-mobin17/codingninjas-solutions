@@ -75,5 +75,4 @@ int main()
     cin >> i >> data;
     head = insertNode(head, i, data);
     print(head);
-    return 0;
 }

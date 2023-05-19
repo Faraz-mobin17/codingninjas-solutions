@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Node.cpp"
+#include "Node.h"
 using namespace std;
 
 int length(Node *head)
