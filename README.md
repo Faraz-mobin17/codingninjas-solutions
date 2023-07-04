@@ -30,6 +30,7 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 
 ### Practice DSA with SDE sheet
 - [SDE Sheet Fraz](https://leadcoding.in/dsa-sheet/)
+- [Neetcode SDE Sheet](https://neetcode.io/practice)
 ### Articles
 
 - [Comprehensive Guide to learn DSA - Leetcode](https://leetcode.com/discuss/general-discussion/494279/Comprehensive-Data-Structure-and-Algorithm-Study-Guide)
