@@ -27,7 +27,9 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 - [pwskills course](https://pwskills.com/category/Java-with-DSA-&-System-Design) - <strong>PAID</strong>
 - [codingblocks course](https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo) - <strong>PAID</strong>
 - [Anuj bhaiya Youtube](https://www.youtube.com/@AnujBhaiya) - <strong>FREE</strong>
-
+- [DSA course with javascript from frontendmasters](https://frontendmasters.com/courses/algorithms/) - <strong>PAID</strong>
+- [InterView Pen DSA course](https://interviewpen.com/) - <strong>PAID</strong>
+- [Sanket Singh DSA Course](https://www.algocamp.io/) - <strong>PAID</strong>
 ### Practice DSA with SDE sheet
 - [SDE Sheet Fraz](https://leadcoding.in/dsa-sheet/)
 - [Neetcode SDE Sheet](https://neetcode.io/practice)
