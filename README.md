@@ -30,6 +30,7 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 - [DSA course with javascript from frontendmasters](https://frontendmasters.com/courses/algorithms/) - <strong>PAID</strong>
 - [InterView Pen DSA course](https://interviewpen.com/) - <strong>PAID</strong>
 - [Sanket Singh DSA Course](https://www.algocamp.io/) - <strong>PAID</strong>
+- [Neetcode DSA Course](https://neetcode.io/courses) - <strong>PAID</strong>
 ### Practice DSA with SDE sheet
 - [SDE Sheet Fraz](https://leadcoding.in/dsa-sheet/)
 - [Neetcode SDE Sheet](https://neetcode.io/practice)
