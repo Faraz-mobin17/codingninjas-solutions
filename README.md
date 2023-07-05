@@ -20,13 +20,14 @@ between cpp and python. cpp is not so beginners friendly and python is too easy 
 - [college wallah](https://www.example.com) - <strong>FREE</strong>
 - [kunal kushwaha](https://www.example.com) - <strong>FREE</strong>
 - [pepcoding](https://www.example.com) - <strong>FREE</strong>
+- [Anuj bhaiya Youtube](https://www.youtube.com/@AnujBhaiya) - <strong>FREE</strong>
 - [williamfiset](https://www.example.com) - <strong>FREE</strong>
+
 - [codingninjas course DSA with Java](https://www.example.com) - <strong>PAID</strong>
 - [GFG self paced DSA course](https://www.example.com) - <strong>PAID</strong>
 - [alpha apna college](https://www.example.com) - <strong>PAID</strong>
 - [pwskills course](https://pwskills.com/category/Java-with-DSA-&-System-Design) - <strong>PAID</strong>
 - [codingblocks course](https://online.codingblocks.com/courses/data-structures-and-algorithms-online-course-java-algo) - <strong>PAID</strong>
-- [Anuj bhaiya Youtube](https://www.youtube.com/@AnujBhaiya) - <strong>FREE</strong>
 - [DSA course with javascript from frontendmasters](https://frontendmasters.com/courses/algorithms/) - <strong>PAID</strong>
 - [InterView Pen DSA course](https://interviewpen.com/) - <strong>PAID</strong>
 - [Sanket Singh DSA Course](https://www.algocamp.io/) - <strong>PAID</strong>
