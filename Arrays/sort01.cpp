@@ -17,7 +17,27 @@ void sortZeroesAndOne(int *input, int size)
         input[i] = 1;
     }
 }
-
+// sort 0 1 2 
+void sort012(int* arr, int n) {
+	int start = 0;
+	int end = n - 1;
+	int i = 0;
+	while (i <= end) {
+		if (arr[i] == 0) {
+			swap(start,i,arr);
+			start++;
+			i++;
+		} 
+		else if (arr[i] == 1) {
+			i++;
+		}
+		else {
+			// if found 2
+			swap(i,end,arr);
+			end--;
+		}
+	}
+}
 int main()
 {
 

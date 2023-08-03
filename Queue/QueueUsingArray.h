@@ -39,7 +39,7 @@ public:
 		}
 		size++;
 	}
-	T front()
+	T frontElement()
 	{
 		if (isEmpty())
 		{
