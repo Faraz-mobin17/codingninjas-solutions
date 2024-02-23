@@ -14,9 +14,7 @@ public class LongestSubArr {
                 max = i + 1; // Update max if the current sum is zero
             } else if (map.containsKey(sum)) {
                 // If the sum is already in the map, update max
-
                 max = Math.max(max, i - map.get(sum));
-
             } else {
                 // Otherwise, store the sum in the map with its index
                 map.put(sum, i);
